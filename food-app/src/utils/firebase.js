@@ -1,6 +1,8 @@
 // Import the functions you need from the SDKs you need
+
 import { initializeApp } from "firebase/app";
-import { getAuth,GoogleAuthProvider } from "firebase/auth";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -8,23 +10,18 @@ import { getAuth,GoogleAuthProvider } from "firebase/auth";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: "food-app-d6da7.firebaseapp.com",
-  projectId: "food-app-d6da7",
-  storageBucket: "food-app-d6da7.appspot.com",
-  messagingSenderId: "738976470282",
-  appId: "1:738976470282:web:8a17af2565bddaf29116f3",
-  measurementId: "G-D7MTW1YV2B"
+  authDomain: "food-app-b5166.firebaseapp.com",
+  projectId: "food-app-b5166",
+  storageBucket: "food-app-b5166.appspot.com",
+  messagingSenderId: "374260368558",
+  appId: "1:374260368558:web:6fac945402fdf39a71593f",
+  measurementId: "G-VVZ8LE7VTX",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-const auth=getAuth(app)
-const provider= new GoogleAuthProvider();
-provider.setCustomParameters({
-  prompt: "select_account"
-});
+export const auth = getAuth();
+export const db = getFirestore(app);
 
-export {auth,provider}
-
-
+export default app;
